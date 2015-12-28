@@ -5,8 +5,11 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String[] args) {
-        int[] vector = {1, 1, 4, 4, 5, 6, 8, 9, 100};
-        Histogram histogram = new Histogram(vector);
-        HashMap<Integer,Integer> histogramResult = histogram.getHistogram();
+        String[] vector = {"Pepe", "Juan", "Juan", "Juan", "Ana", "Ana"};
+        Histogram<String> histogram = CalculateHistogram.computeHistogram(vector);
+
+        for (Object key : histogram.keySet()) {
+            System.out.println(key + "-->" + histogram.get(key));
+        }
     }
 }
